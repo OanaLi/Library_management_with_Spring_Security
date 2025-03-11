@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+<div class="body">
+    <h1>Create Books</h1>
+
+    <div th:switch="${registrationSuccess}">
+        <div th:case="'Success'" class="alert alert-success">
+            <strong>Success!</strong> Operation performed successfully.
+        </div>
+        <div th:case="'Failed'" class="alert alert-danger">
+            <strong>Failure!</strong> Operation failed. Please try again
+        </div>
+    </div>
+
+    <form method="post" th:action="@{/books/create}" class="px-4">
+        <div class="form-group mb-3">
+            <label>Title
+                <input th:field="${book.title}" class="form-control">
+            </label>
+        </div>
+        <div class="form-group mb-3">
+            <label>Author
+                <input th:field="${book.author}" class="form-control">
+            </label>
+        </div>
+        <div class="form-group mb-3">
+            <label>Price
+                <input th:field="${book.price}" class="form-control">
+            </label>
+        </div>
+        <div class="form-group mb-3">
+            <input type="submit" value="Create Book" class="btn btn-success">
+        </div>
+    </form>
+</div>
+
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>
