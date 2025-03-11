@@ -24,12 +24,15 @@ There are two types of users: **Administrator** and **User**.
 As a **User**, you can:
   - View the existing book collection.
   - See your personal data.
+  - Create a user account by registering.
 
 As an **Administrator**, you can:
   - Perform all actions a User can do.
   - Add new books.
   - Delete books.
   - See all user accounts.
+
+**Admin login credentials**: Username = `Admin`, Password = `Admin!1234`
 
 This project uses **Spring Boot** for the backend and **Thymeleaf** for the frontend (web interface).
 
@@ -41,5 +44,3 @@ This project uses **Spring Boot** for the backend and **Thymeleaf** for the fron
 - Thymeleaf
 - Bootstrap
 - MySQL Database
-
-
